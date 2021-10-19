@@ -25,8 +25,8 @@ body {
     max-width: 900px;
     padding: 20px 30px;
     border-radius: 10px;
-    background-color: rgba(255,255,255, 0.5);
-    box-shadow: 0 10px 10px 10px rgba(0,0,0, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .quote-text {
@@ -64,7 +64,7 @@ button {
     background-color: #333;
     outline: none;
     padding: 0.5rem 1.8rem;
-    box-shadow: 0 0.3rem rgba(121,121,121, 0.65);
+    box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
 
 }
 
@@ -74,7 +74,7 @@ button:hover {
 
 button:active {
     transform: translate(0, 0.3rem);
-    box-shadow: 0 0.1rem rgba(255,255,255, 0.65);
+    box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
 }
 
 .twitter-button:hover {
@@ -88,9 +88,9 @@ button:active {
 /* Media query : Table for Smaller*/
 
 @media screen and (max-width:1000px) {
-    
+
     .quote-container {
-        margin: auto 10px;   
+        margin: auto 10px;
     }
 
     .quote-text {
