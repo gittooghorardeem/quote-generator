@@ -85,6 +85,15 @@ button:active {
     font-size: 1.5rem;
 }
 
+.fa-facebook {
+    font-size: 1.5rem;
+}
+
+.facebook-button:hover {
+    color: #4267B2;
+}
+
+
 /* Loader */
 
 .loader {
