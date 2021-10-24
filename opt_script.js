@@ -6,15 +6,14 @@ const facebookBtn = document.getElementById('facebook');
 const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById('loader');
 
-
-// Show Loading animation 
-function loading() {
+// Show Loading Spinner animation 
+function showLoadingSpinner() {
     loader.hidden = false;
     quoteContainer.hidden = true;
 }
 
-// Hide Loading Aniumation
-function complete() {
+// Hide Loading Spinner Aniumation
+function hideLoadingSpinner() {
     loader.hidden = true;
     quoteContainer.hidden = false;
 }
@@ -22,7 +21,7 @@ function complete() {
 // Get quote From API also includes CORS Policy fix
 
 async function getQuote() {
-    loading();
+    showLoadingSpinner();
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     const apiUrl = 'http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json';
     try {
@@ -46,7 +45,8 @@ async function getQuote() {
         }
 
         quoteText.innerText = data.quoteText;
-        complete();
+        hideLoadingSpinner();
+        // throw new Error('Ooops');
 
     } catch (error) {
         getQuote();
@@ -58,18 +58,18 @@ async function getQuote() {
 // Tweet Quote
 function tweetQuote() {
     const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
-    window.open(twitterUrl,'_blank');
+    window.open(twitterUrl, '_blank');
 }
 // Share quote on facebook
 function facebookQuote() {
     const facebookUrl = `https://www.facebook.com`;
-    window.open(facebookUrl,'_blank');
+    window.open(facebookUrl, '_blank');
 }
 
 // Eventlisteners
-twitterBtn.addEventListener('click',tweetQuote);
-facebookBtn.addEventListener('click',facebookQuote);
-newQuoteBtn.addEventListener('click',getQuote)
+twitterBtn.addEventListener('click', tweetQuote);
+facebookBtn.addEventListener('click', facebookQuote);
+newQuoteBtn.addEventListener('click', getQuote)
 
 // On Load
 
