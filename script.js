@@ -60,7 +60,7 @@ async function getQuotes() {
         // console.log(apiQuotes[10]);
         newQuote();
     } catch (error) {
-        // catch error here
+        console.log('Whooops!! no Quote this time...', error);
     }
 }
 
